@@ -62,10 +62,10 @@ void ac_command(){
 
   ac.send();
   Serial.println("----------");
-  publishAvailability();
-  publishMode();
-  publishTemp();
-  publishFanSpeed();
+  // publishAvailability();
+  // publishMode();
+  // publishTemp();
+  // publishFanSpeed();
   // publishSwing();
   // publishBoost();
 }

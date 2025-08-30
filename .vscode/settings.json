@@ -3,5 +3,7 @@
         "random": "cpp",
         "string_view": "cpp",
         "regex": "cpp"
-    }
+    },
+    "platformio-ide.customPATH": "C:\\Program Files\\Git\\cmd"
+
 }

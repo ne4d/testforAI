@@ -1,8 +1,12 @@
 #ifndef MQTT_H
 #define MQTT_H
 
+#define ASYNC_MQTT_DEBUG_PORT Serial  // Вывод на Serial
+#define _ASYNC_MQTT_LOGLEVEL_ 4       // Уровень 4: очень детально (TCP, пакеты, ACK)
+
 #include <Arduino.h>
-#include <AsyncMqttClient.h>
+// #include <AsyncMqttClient.h>
+#include <AsyncMqtt_Generic.h>
 #include <ESP8266WiFi.h>
 #include <ezOutput.h>
 #include "../fs/filesystem.h"
@@ -25,5 +29,6 @@ void publishTemp(uint8_t qos = 0, bool retain = true);
 void publishFanSpeed(uint8_t qos = 0, bool retain = true);
 void publishSwing(uint8_t qos = 0, bool retain = true);
 void publishBoost(uint8_t qos = 0, bool retain = true);
+void onMqttMessage(char *in_topic, char *payload, AsyncMqttClientMessageProperties properties, size_t len, size_t index, size_t total);
 
 #endif

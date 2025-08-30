@@ -17,8 +17,9 @@ void mqttInit()
     mqttClient.onMessage(onMqttMessage);
     // mqttClient.setMaxTopicLength(1024);
     // SUPERIMPORTANT!!!
-    static String willTopic = dev_uid + "/status";
-    mqttClient.setWill(willTopic.c_str(), 0, true, "offline");
+    // static String willTopic = dev_uid + "/status";
+    // mqttClient.setWill(willTopic.c_str(), 0, true, "offline");
+    mqttClient.setWill(String(dev_uid + "/status").c_str(), 0, true, "offline");
     mqttClient.setClientId(FSReadJsonString("mac").c_str());
     mqttClient.setKeepAlive(20);
 }
@@ -117,10 +118,10 @@ void onMqttConnect(bool sessionPresent)
 
 void onMqttDisconnect(AsyncMqttClientDisconnectReason reason)
 {
-    mqtt_connection_state = false;
-    mqtt_connection_initiation = false;
-    mqtt_config_published = false;
-    mqtt_availability_published = false;
+    // mqtt_connection_state = false;
+    // mqtt_connection_initiation = false;
+    // mqtt_config_published = false;
+    // mqtt_availability_published = false;
     // ledConfig.blink(400, 400);
 
     Serial.println("Disconnected from MQTT. Reason: " + String((uint8_t)reason));
@@ -147,6 +148,9 @@ void onMqttDisconnect(AsyncMqttClientDisconnectReason reason)
     default:
         Serial.println("Unknown MQTT disconnect reason.");
         break;
+    }
+    if (WiFi.isConnected()) {
+        mqttReconnectTimer.once(2, connectMqtt);
     }
 }
 

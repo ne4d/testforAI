@@ -6,6 +6,8 @@
 #include "../system.h"
 #include "../device_config.h"
 #include "../fs/filesystem.h"
+#include "../mqtt/mqtt.h"
+#include "../web/server.h"
 
 String getFormattedMAC();
 void connectToWifi();

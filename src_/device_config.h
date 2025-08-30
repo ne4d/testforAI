@@ -3,6 +3,7 @@
 
 #include <Arduino.h>
 #include <ezOutput.h> // ezOutput library
+#include <Ticker.h>
 
 // настройка пинов
 extern uint8_t blinkPin;     // Кнопка (GPIO8)
@@ -29,6 +30,10 @@ const uint8_t kIrLed = D7;  // ESP8266 GPIO пин ИК светодиода
 extern String dev_uid;
 
 // led blink
-extern ezOutput ledConfig;
+//extern ezOutput ledConfig;
+
+extern Ticker mqttReconnectTimer;
+extern Ticker wifiReconnectTimer;
+
 
 #endif

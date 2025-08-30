@@ -16,19 +16,19 @@ void setFlashDefaults()
         // FSWriteJsonString("mqtt_un", "local");
         // FSWriteJsonString("mqtt_pw", "aYCMeT");
 
-        // FSWriteJsonString("ssid", "Norris Service");
-        // FSWriteJsonString("ssid_pw", "norrispower");
-        // FSWriteJsonString("mqtt_server", "10.10.1.254");
-        // FSWriteJsonUint64("mqtt_port", 1883);
-        // FSWriteJsonString("mqtt_un", "local");
-        // FSWriteJsonString("mqtt_pw", "local");
-
-        FSWriteJsonString("ssid", "Anna");
-        FSWriteJsonString("ssid_pw", "4488625sk");
-        FSWriteJsonString("mqtt_server", "10.10.1.240");
+        FSWriteJsonString("ssid", "Norris Service");
+        FSWriteJsonString("ssid_pw", "norrispower");
+        FSWriteJsonString("mqtt_server", "10.10.1.254");
         FSWriteJsonUint64("mqtt_port", 1883);
         FSWriteJsonString("mqtt_un", "local");
         FSWriteJsonString("mqtt_pw", "local");
+
+        // FSWriteJsonString("ssid", "Anna");
+        // FSWriteJsonString("ssid_pw", "4488625sk");
+        // FSWriteJsonString("mqtt_server", "10.10.1.240");
+        // FSWriteJsonUint64("mqtt_port", 1883);
+        // FSWriteJsonString("mqtt_un", "local");
+        // FSWriteJsonString("mqtt_pw", "local");
 
         FSWriteJsonString("mac", getFormattedMAC());
         FSWriteJsonString("web_pw", "admin");
